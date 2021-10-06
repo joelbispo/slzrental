@@ -5,9 +5,10 @@
     "username": "docker",
     "password": "admin123",
     "database": "rentslz",
-    "entities": ["./src/modules/cars/entities/**.ts"],
+    "entities": ["./src/modules/cars/entities/**.ts",
+                "./src/modules/accounts/entities/**.ts"],
     "migrations": ["./src/database/migrations/**.ts"],
     "cli": {
-        "migrationDir":"./src/database/migrations"
+        "migrationDir":["./src/database/migrations"]
     }
 }
