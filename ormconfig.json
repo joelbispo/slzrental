@@ -5,7 +5,7 @@
     "username": "docker",
     "password": "admin123",
     "database": "rentslz",
-    "entities": ["./src/modules/**/entities/*.ts"],
+    "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
     "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "cli": {
         "migrationDir":"./src/shared/infra/typeorm/migrations/"

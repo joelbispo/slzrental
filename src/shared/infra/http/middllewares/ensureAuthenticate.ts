@@ -17,7 +17,7 @@ export async function ensureAuthenticated(request: Request, response: Response, 
 
     const [, token ] = authHeader.split(" ");
 
-    try {
+    // try {
         const { sub: user_id } = verify(token, "b29616d841e4896c5f5a879d40c75e2a") as IPayload;
         const usersRepository = new UsersRepository();
         const user = await usersRepository.findById(user_id);
@@ -28,11 +28,10 @@ export async function ensureAuthenticated(request: Request, response: Response, 
         request.user = {
             id: user_id
         }
-
         next();
-    } catch {
-        throw new AppError("Invalid token!", 401)
-    }
+    // } catch {
+    //     throw new AppError("Invalid token!", 401)
+    // }
     
 
 }

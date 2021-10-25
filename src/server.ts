@@ -4,13 +4,13 @@ import "express-async-errors";
 import { AppError } from "./shared/errors/AppError";
 import swaggerUi from "swagger-ui-express";
 
+import "@shared/container";
 import swaggerFile from "./swagger.json";
-import { router } from './shared/infra/http/routes';
+import { router } from '@shared/infra/http/routes';
+import createConnection from "@shared/infra/typeorm";
 
-import "./shared/infra/typeorm";
 
-import "./shared/container";
-
+createConnection();
 
 const app = express();
 
